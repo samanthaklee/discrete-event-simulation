@@ -2,18 +2,18 @@
 CS 130A Programming Assignment
 Discrete event simulation of a computer network being attacked 
 
-###Union Find, and Your own Composite Data Structure
+### Union Find, and Your own Composite Data Structure
 You are going to simulate more network shenanigans, this time with multiple attackers and sysadmins. The network no longer has a trivial topology, and the network routing tables are built upon a minimum spanning tree generated using kruskal’s algorithm. Compromised machines will be added to a sysadmin fix queue.
 
 For the sysadmin fix queue, you will implement a composite data structure that enables constant time enqueue, constant time dequeue, and constant time membership check (re-broken machines don’t get a re-entry).
 
 Implementation of union-find, kruskal’s algorithm, the event priority queue (though it must be heap based), and the efficient queue used by the sysadmins.
 
-###Sample Input
+### Sample Input
 ./program_name number_of_attackers number_of_sysadmins number_of_nodes random_seed # example
 ./program2 20 20 1000 1234
 
-###The Network
+### The Network
 You are going to construct a graph using the following algorithm:
 1. Seed the random number generator with the random_seed
 2. For i = 0 to number_of_nodes-1
@@ -40,7 +40,7 @@ rebuild_spanning_tree(time)
 The network is missing zero or more nodes (fixes could have happened as well since this was scheduled), the network will restore its spanning tree property on surviving nodes using kruskal’s algorithm, but using any edges already in the spanning tree. Print out a statement indicating the current spanning tree cost and the list of missing nodes. Also compute the actual MST for the current graph (exclude all compromised nodes and their edges, but do not pick up the current graph as the starting point). Print out the optimal MST value at this point.
 NOTE: it is possible that no spanning tree is possible.
 
-###Agent Types
+### Agent Types
 These are agents that respond or produce events (or both)
 
 Attacker
@@ -49,7 +49,7 @@ Each attacker randomly compromises a computer with a random iteration interval.
 Sysadmin
 Sysadmins fix computers.
 
-###Purpose
+### Purpose
 1. You should have a good implementation of Kruskal’s algorithm to generate MSTs on (potentially) incomplete graphs.
 2. You should have an implementation of Kruskal’s that starts with a forest as a starting point that might not be along the optimal path. Note that Kruskal’s algorithm makes this somewhat convenient.
 3. You should make an effort to make your implementation efficient (the queue maintained by sysadmins has an explicit requirement).
