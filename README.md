@@ -23,10 +23,10 @@ i. cost(i,j) = uniform random integer (-120, 100)
 4. Cull all non-positive edges
 This results in a somewhat sparse graph, though still O(n2   ) on average. All remaining edges have positive costs. The final graph can be stored however is convenient for your code.
 
-###Stopping Condition
+### Stopping Condition
 The stopping conditions for this simulation is that 2,000 attacks have occurred.
 
-###Events
+### Events
 There are a minimum number of event types that must be implemented by the simulation. Remember, events are objects that are stored in the event queue. All events have a scheduled time > simulated_now.
 
 attack(time, source, target)
